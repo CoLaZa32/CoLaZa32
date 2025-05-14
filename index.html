@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>เที่ยวจังหวัดแพร่ - Amazing Phrae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sarabun:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            margin: 0;
+            background: #f4f4f9;
+            color: #222;
+        }
+        header {
+            background: #0b5a8a;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #0873b9;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .slideshow-container {
+            max-width: 900px;
+            margin: 1.5rem auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .slide {
+            display: none;
+        }
+        .slide img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .slide-caption {
+            position: absolute;
+            left: 40px;
+            bottom: 30px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-size: 1.08rem;
+        }
+        .active {
+            display: block;
+        }
+        section {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #0b5a8a;
+            margin-top: 0;
+        }
+        .places {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .place-card {
+            flex: 1 1 250px;
+            background: #f9fafb;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .place-card:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+        .place-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, textarea, button {
+            padding: 0.7rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        button {
+            background: #0b5a8a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #0873b9;
+        }
+        footer {
+            background: #0b5a8a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width:700px) {
+            section, .slideshow-container {
+                padding: 1rem;
+            }
+            .places {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>เที่ยวจังหวัดแพร่</h1>
+        <p>เปิดประตูเมืองแพร่ สัมผัสธรรมชาติ วัฒนธรรม และวิถีชีวิตท้องถิ่น</p>
+    </header>
+    <nav>
+        <a href="#main">หน้าแรก</a>
+        <a href="#places">สถานที่ท่องเที่ยว</a>
+        <a href="#gallery">แกลเลอรี่</a>
+        <a href="#contact">ติดต่อเรา</a>
+    </nav>
+
+    <!-- Slideshow (Hero Section) -->
+    <div class="slideshow-container" id="main">
+        <div class="slide active">
+            <img src="https://www.phrae.go.th/images/article/news/2022/12/Phrae1.jpg" alt="วัดพระธาตุช่อแฮ">
+            <div class="slide-caption">วัดพระธาตุช่อแฮ พระอารามหลวง สัญลักษณ์คู่เมืองแพร่</div>
+        </div>
+        <div class="slide">
+            <img src="https://www.tourismthailand.org/FileUpload/Multimedia/Big/20200217151951_1.jpg" alt="อุทยานแห่งชาติแพร่">
+            <div class="slide-caption">อุทยานแห่งชาติเวียงโกศัย ป่าเขา น้ำตกสวยงาม</div>
+        </div>
+        <div class="slide">
+            <img src="https://cms.dmpcdn.com/travel/2020/08/18/df6a6e30-e0e1-11ea-8c97-5b0d7c9b0b0e_original.jpg" alt="คุ้มเจ้าหลวงแพร่">
+            <div class="slide-caption">คุ้มเจ้าหลวงแพร่ อาคารโบราณทรงคุณค่า</div>
+        </div>
+    </div>
+
+    <!-- สถานที่ท่องเที่ยว -->
+    <section id="places">
+        <h2>สถานที่ท่องเที่ยวยอดนิยม</h2>
+        <div class="places">
+            <div class="place-card">
+                <img src="https://www.checkinchill.com/wp-content/uploads/2020/06/wat-phrathat-cho-hae-1.jpg" alt="พระธาตุช่อแฮ">
+                <h3>วัดพระธาตุช่อแฮ</h3>
+                <p>พระธาตุประจำปีเกิดปีขาล เป็นวัดเก่าแก่และศักดิ์สิทธิ์ของชาวแพร่</p>
+            </div>
+            <div class="place-card">
+                <img src="https://cms.dmpcdn.com/travel/2020/08/18/df6a6e30-e0e1-11ea-8c97-5b0d7c9b0b0e_original.jpg" alt="คุ้มเจ้าหลวงแพร่">
+                <h3>คุ้มเจ้าหลวงแพร่</h3>
+                <p>อาคารโบราณสถาปัตยกรรมผสมผสานรัชกาลที่ 5 และล้านนา</p>
+            </div>
+            <div class="place-card">
+                <img src="https://www.tourismthailand.org/FileUpload/Multimedia/Big/20200217151951_1.jpg" alt="อุทยานแห่งชาติเวียงโกศัย">
+                <h3>อุทยานแห่งชาติเวียงโกศัย</h3>
+                <p>ธรรมชาติสวยงาม มีน้ำตกแม่เกิ๋งหลวงและจุดชมวิวภูเขา</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- แกลเลอรี่ -->
+    <section id="gallery">
+        <h2>แกลเลอรี่ภาพ</h2>
+        <div class="gallery">
+            <img src="https://www.checkinchill.com/wp-content/uploads/2020/06/wat-phrathat-cho-hae-1.jpg" alt="วัดพระธาตุช่อแฮ">
+            <img src="https://cms.dmpcdn.com/travel/2020/08/18/df6a6e30-e0e1-11ea-8c97-5b0d7c9b0b0e_original.jpg" alt="คุ้มเจ้าหลวงแพร่">
+            <img src="https://www.tourismthailand.org/FileUpload/Multimedia/Big/20200217151951_1.jpg" alt="อุทยานแห่งชาติเวียงโกศัย">
+            <img src="https://www.phrae.go.th/images/article/news/2022/12/Phrae1.jpg" alt="ธรรมชาติแพร่">
+            <img src="https://www.checkinchill.com/wp-content/uploads/2020/06/phrae.jpg" alt="ชุมชนเมืองแพร่">
+        </div>
+    </section>
+
+    <!-- ติดต่อเรา -->
+    <section id="contact">
+        <h2>ติดต่อเรา</h2>
+        <form onsubmit="event.preventDefault(); alert('ขอบคุณสำหรับการติดต่อ!');">
+            <input type="text" name="name" placeholder="ชื่อของคุณ" required>
+            <input type="email" name="email" placeholder="อีเมล" required>
+            <textarea name="message" rows="4" placeholder="ข้อความของคุณ..." required></textarea>
+            <button type="submit">ส่งข้อความ</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 เที่ยวจังหวัดแพร่ | Amazing Phrae
+    </footer>
+    <script>
+        // Slideshow script
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        function showSlide() {
+            slides.forEach((slide, idx) => slide.classList.toggle('active', idx === slideIndex));
+            slideIndex = (slideIndex + 1) % slides.length;
+        }
+        setInterval(showSlide, 3500);
+        showSlide();
+    </script>
+</body>
+</html>
