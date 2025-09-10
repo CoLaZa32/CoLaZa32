@@ -1,63 +1,42 @@
-ì 
-## Hi there 👋
 
-<!--
-**CoLaZa32/CoLaZa32** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 👋 สวัสดีครับ ผม CoLaZa32
+#### Full-stack Developer | Google Community Developer
 
-Here are some ideas to get you started:
+ยินดีต้อนรับสู่โปรไฟล์ของผม! ผมเป็นนักพัฒนา Full-stack ที่มีความเชี่ยวชาญในการสร้างเว็บไซต์และแอปพลิเคชันที่ทำงานได้อย่างมีประสิทธิภาพทั้งในแบบ Full-stack และ Hybrid developer
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->import requests
-import os
-from datetime import datetime
+---
 
-def get_github_stats(username, token=None):
-    """ดึงข้อมูลจาก GitHub API"""
-    headers = {}
-    if token:
-        headers['Authorization'] = f'token {token}'
-    
-    # ข้อมูลผู้ใช้
-    user_url = f"https://api.github.com/users/{username}"
-    user_response = requests.get(user_url, headers=headers)
-    user_data = user_response.json()
-    
-    # ข้อมูล repository
-    repos_url = f"https://api.github.com/users/{username}/repos?per_page=100"
-    repos_response = requests.get(repos_url, headers=headers)
-    repos_data = repos_response.json()
-    
-    return user_data, repos_data
+### 🚀 ประสบการณ์และความเชี่ยวชาญ
 
-def generate_readme_content(user_data, repos_data):
-    """สร้างเนื้อหา README"""
-    name = user_data.get('name', user_data.get('login', 'CoLaZa32'))
-    bio = user_data.get('bio', 'นักพัฒนาที่สนใจในเทคโนโลยีใหม่ๆ')
-    email = user_data.get('email', 'colaza32@email.com')
-    avatar_url = user_data.get('avatar_url', '')
-    
-    # นับ stars และ forks
-    total_stars = sum(repo['stargazers_count'] for repo in repos_data)
-    total_forks = sum(repo['forks_count'] for repo in repos_data)
-    
-    # หาภาษาที่ใช้บ่อย
-    languages = {}
-    for repo in repos_data:
-        if repo['language']:
-            languages[repo['language']] = languages.get(repo['language'], 0) + 1
-    
-    top_languages = sorted(languages.items(), key=lambda x: x[1], reverse=True)[:5]
-    
-    readme_content = f"""# สวัสดี! ผมคือ {name} 👋
+* **Full-stack Development:** ออกแบบและพัฒนาทั้งฝั่ง Front-end และ Back-end
+* **Hybrid Development:** สร้างแอปพลิเคชันบนแพลตฟอร์มต่างๆ ด้วยเทคโนโลยีแบบ Hybrid
+* **Freelance:** ให้บริการพัฒนาเว็บไซต์และแอปพลิเคชันผ่าน Fastwork Thailand
+* **Cybersecurity:** มีความเชี่ยวชาญด้านความมั่นคงปลอดภัยไซเบอร์ (Red Team) จากหลักสูตรขั้นสูงของ สกมช.
 
-{bio}
+---
+
+### 🛠️ ทักษะและเทคโนโลยี
+
+| Front-end | Back-end | Database | Cloud & Tools | Cybersecurity |
+|---|---|---|---|---|
+| HTML, CSS, JavaScript | Python, Node.js | MySQL, PostgreSQL | Google Cloud, Docker | Network Security, Pentesting |
+| React, Vue.js | Express.js, Django | MongoDB | Git, GitHub | Cybersecurity Forensics |
+
+---
+
+### 🏆 ใบรับรองที่ได้รับ
+
+* **หลักสูตร Cybersecurity ขั้นสูง (สกมช.)**
+* **หลักสูตร AI Essentials**
+
+---
+
+### 🌐 ติดต่อและติดตามผม
+
+* **LinkedIn:** [ใส่ลิงก์โปรไฟล์ LinkedIn ของคุณ]
+* **Fastwork:** [ใส่ลิงก์โปรไฟล์ Fastwork ของคุณ]
+* **Email:** [ใส่อีเมลของคุณ]
+
 
 ## 📊 สถิติ GitHub ของผม
 
